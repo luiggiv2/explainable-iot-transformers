@@ -1,0 +1,13 @@
+# Stabilising Explainability Fragility in Cybersecurity AI: The Impact and Mitigation of Multicollinearity in Public Benchmark Datasets
+- **Authors**: Ioannis J. Vourganas, Anna Lito Michala
+- **Year / Venue**: 2026, arXiv preprint (submitted 2026-05-21, v1). Manuscript states it was submitted to ACM TAISAP; preprint-only as of 2026-07-14 (verified via arXiv comments field, which explicitly reads "submitted to ACM TAISAP" with no acceptance notice, and DBLP, which lists only the CoRR/arXiv entry with no journal/conference record).
+- **DOI**: 10.48550/arXiv.2605.22529 (arXiv preprint DOI)
+- **URL**: https://arxiv.org/abs/2605.22529
+- **Cluster**: 3
+- **Dataset(s)**: UNSW-NB15
+- **Models / Methods**: Linear models, tree-based models, kernel-based models, and neural networks (comparative sweep across model families)
+- **Key metrics reported**: Novel "Explainability Fragility Score"; Kendall's tau used to quantify explanation instability across bootstrapped re-samples; Variance Inflation Factor (VIF) and correlation thresholding used to characterize multicollinearity in the dataset
+- **XAI method (if any)**: SHAP and LIME
+- **Relevance to our RQs**: Core relevance to **RQ3** — provides a formal theorem and empirical evidence that multicollinearity (redundant/correlated features), a well-documented artifact of public IDS benchmark datasets, inflates attribution variance and makes SHAP/LIME explanations non-identifiable, i.e., attributions can shift arbitrarily among correlated features without changing the model's prediction. Also relevant to **RQ4**, since it operationalizes explanation instability via Kendall's tau over bootstrapped explanations — a close methodological cousin to our planned Spearman-rank-correlation robustness protocol.
+- **Stated limitations**: Empirical evaluation is conducted on a single representative benchmark dataset (UNSW-NB15); broader cross-dataset validation of the proposed mitigations (CAA-Filtering, SHARP) is not detailed in the available abstract/summary and should be treated as [VERIFICAR] until the full text is reviewed.
+- **Quotable finding (paraphrased)**: The authors prove formally that correlated or redundant features — a structural property common to public IDS benchmark datasets — inflate the variance of feature attributions to the point that SHAP and LIME explanations become non-identifiable (i.e., multiple equally valid but different explanations exist for the same prediction), and they show that grouping correlated attributions (CAA-Filtering) or regularizing training explicitly for attribution stability (SHARP) measurably reduces this fragility.

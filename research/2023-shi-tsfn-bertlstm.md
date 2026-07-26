@@ -1,0 +1,13 @@
+# TSFN: A Novel Malicious Traffic Classification Method Using BERT and LSTM
+- **Authors**: Zhaolei Shi, Nurbol Luktarhan, Yangyang Song, Huixin Yin (College of Information Science and Engineering, Xinjiang University)
+- **Year / Venue**: 2023 / Entropy (MDPI), vol. 25, no. 5, article 821 (peer-reviewed, open-access journal). Quartile: [VERIFICAR] (Scimago/scimagojr.com unreachable in this environment as of 2026-07-14 — WebFetch returns HTTP 403, browser navigation blocked by organizational policy for the domain; not verified via aggregator sources per hard no-guessing rule; prior "Q2-tier" phrasing removed as unsourced)
+- **DOI**: 10.3390/e25050821
+- **URL**: https://pmc.ncbi.nlm.nih.gov/articles/PMC10216927/ ; https://www.mdpi.com/1099-4300/25/5/821
+- **Cluster**: 1
+- **Dataset(s)**: USTC-TFC (public malicious/benign traffic classification benchmark). NOT CICIoT2023 / not IoT-specific.
+- **Models / Methods**: Hybrid "TSFN" (time-series feature network): a BERT-based "packet encoder" module captures global/contextual features of traffic via self-attention, feeding into an LSTM-based temporal feature extraction module that captures sequential/time-series patterns across packets in a flow. Combines transformer contextualization with recurrent temporal modeling rather than using a transformer alone.
+- **Key metrics reported**: F1 = 99.50% on USTC-TFC for malicious traffic classification (reported as an improvement over prior baselines; exact baseline comparison table not retrieved — `[VERIFICAR]` for full table).
+- **XAI method (if any)**: None reported.
+- **Relevance to our RQs**: Relevant to RQ1 as an example of augmenting a BERT-style encoder with an explicit temporal module (LSTM) to capture flow-level sequential dependencies that a single encoder pass over a serialized-feature sentence would not directly capture — useful contrast/limitation point for our single-pass DistilBERT design, and a citation for the broader "BERT for malicious traffic" literature predating IoT-specific corpora like CICIoT2023.
+- **Stated limitations**: [VERIFICAR] — not detailed in fetched content.
+- **Quotable finding (paraphrased)**: Pairing a BERT-based packet/global-feature encoder with an LSTM temporal module to explicitly model the sequential structure of a traffic flow pushes malicious-traffic classification F1 above 99% on the USTC-TFC benchmark, suggesting that temporal ordering carries information a context-only transformer encoder may under-exploit.

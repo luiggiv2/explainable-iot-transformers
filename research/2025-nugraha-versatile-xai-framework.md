@@ -1,0 +1,13 @@
+# A versatile XAI-based framework for efficient and explainable intrusion detection systems
+- **Authors**: Beny Nugraha, Abhishek Venkatesh Jnanashree, Thomas Bauschert
+- **Year / Venue**: 2025 (online 2025-09-29), Annals of Telecommunications (Springer). Quartile: [VERIFICAR] (Scimago/scimagojr.com unreachable in this environment as of 2026-07-14 — WebFetch returns HTTP 403, browser navigation blocked by organizational policy for the domain; not verified via aggregator sources per hard no-guessing rule)
+- **DOI**: 10.1007/s12243-025-01118-9
+- **URL**: https://link.springer.com/article/10.1007/s12243-025-01118-9
+- **Cluster**: 3
+- **Dataset(s)**: CIC-DDoS2019, CICIoT2023, 5G PFCP (three datasets, tested for cross-dataset versatility)
+- **Models / Methods**: Two-stage feature-selection pipeline — ANOVA-based statistical filtering followed by a SHAP-scored second-stage selection (reducing dimensionality by ~70%) — feeding a retrained XGBoost detector
+- **Key metrics reported**: F1 scores exceeding 99% maintained across all three datasets after ~70% dimensionality reduction; LIME per-instance explanation time reduced from 36 seconds to 4.9 seconds
+- **XAI method (if any)**: SHAP (used both for feature-selection scoring and for local explanations) cross-validated against LIME (also used for local explanations)
+- **Relevance to our RQs**: A second paper in this cluster using CICIoT2023 directly, with a SHAP+LIME cross-validation design that mirrors (in spirit) our planned Captum+SHAP cross-check methodology — though built on XGBoost/tabular features rather than a fine-tuned transformer over textualized flows, making it a useful non-competing reference point for **RQ1/RQ2**. Also directly relevant to **RQ5**: the paper explicitly targets and quantifies near-real-time explanation efficiency (LIME runtime cut by ~86%), complementary to our inference-latency/model-footprint framing.
+- **Stated limitations**: [VERIFICAR] — not directly accessed; based on available abstract, the approach is tabular/classical-ML only (XGBoost), with efficiency gains demonstrated specifically for LIME runtime and not necessarily generalizable to other XAI methods (e.g., SHAP KernelExplainer, Captum).
+- **Quotable finding (paraphrased)**: Combining ANOVA-based statistical filtering with a SHAP-scored second-stage feature selection cuts input dimensionality by roughly 70% while keeping XGBoost F1 above 99% on three different benchmark datasets including CICIoT2023, and shortens LIME's per-instance explanation time from 36 seconds to under 5 seconds — evidence that XAI-guided feature reduction can make local explanations practical for near-real-time IDS deployment.

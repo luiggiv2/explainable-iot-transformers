@@ -1,0 +1,13 @@
+# MT-FBERT: Malicious Traffic Detection Based on Efficient Federated Learning of BERT
+- **Authors**: Jian Tang, Zhao Huang, Chunqiang Li
+- **Year / Venue**: 2025 / Future Internet (MDPI), vol. 17, no. 8, article 323 (peer-reviewed, open-access journal). Quartile: [VERIFICAR] (Scimago/scimagojr.com unreachable in this environment as of 2026-07-14 — WebFetch returns HTTP 403, browser navigation blocked by organizational policy for the domain; not verified via aggregator sources per hard no-guessing rule)
+- **DOI**: 10.3390/fi17080323
+- **URL**: https://www.mdpi.com/1999-5903/17/8/323
+- **Cluster**: 1
+- **Dataset(s)**: USTC-TFC2016 (10 malware families + 10 benign apps), IoT-22, IoT-23 (33 attack variants across 7 threat categories), CIC-MalAnal2017 (4,354 malicious + 6,500 benign specimens).
+- **Models / Methods**: MT-FBERT combines (1) BERT-style pre-training on unlabeled traffic using two custom pretext tasks — Masked Burst Modeling (MBM) and Next Burst Prediction (NBP) — to learn generalized traffic representations without hand-engineered features, with (2) federated fine-tuning across distributed organizations, using magnitude-based neuron pruning (compression) and layer-/neuron-level knowledge distillation to cut communication cost while preserving privacy.
+- **Key metrics reported**: Average F1 = 0.9221 across the four evaluated datasets; performance exceeds 99% F1 on the binary-classification datasets; minimal GPU memory footprint (~206 MB at batch size 128).
+- **XAI method (if any)**: None reported; paper's focus is efficiency/privacy, not interpretability.
+- **Relevance to our RQs**: Relevant to RQ5 (footprint/resource trade-off) as a concrete example of a BERT-style traffic classifier optimized for constrained/distributed deployment (memory ~206 MB, pruning + distillation), including an IoT-23 evaluation — useful comparison point for our model-footprint discussion even though it does not use CICIoT2023 or any serialized-text input format (it operates on burst-level traffic tokens, similar to ET-BERT's paradigm, not natural-language feature sentences).
+- **Stated limitations**: Designed for single-flow detection; multi-flow/session-level scenarios may degrade performance; pre-training data remains potentially vulnerable to poisoning ("toxic embeddings") attacks, a risk not explored in the paper for the network-traffic setting.
+- **Quotable finding (paraphrased)**: Combining masked-burst-style BERT pre-training with neuron pruning and knowledge distillation inside a federated learning loop keeps malicious-traffic detection F1 above 99% on binary tasks while cutting per-round communication and memory cost to levels compatible with distributed, privacy-sensitive deployment across organizations.

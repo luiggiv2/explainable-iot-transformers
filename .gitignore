@@ -1,0 +1,37 @@
+# ---- Environment / caches ----
+.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+.DS_Store
+**/.DS_Store
+
+# ---- Internal tooling (not part of the scientific artifact) ----
+.claude/
+CLAUDE.md
+
+# ---- Manuscript drafts (published via the journal / a separate preprint) ----
+sections/
+
+# ---- CICIoT2023 dataset: NOT redistributed (see README; download from CIC) ----
+data/raw/
+
+# ---- Derived dataset rows (regenerable via scripts 01-02; excluded for size
+#      and to respect the CIC dataset terms) ----
+data/subset_60k.parquet
+data/splits/
+data/serialized/
+
+# ---- Trained models (regenerable via scripts 03-04; large) ----
+data/models/
+
+# ---- Copyrighted publisher PDFs (literature; do not redistribute) ----
+research/*.pdf
+
+# ---- Transient logs ----
+data/*.log
+*.log
+
+# Everything else under data/ (metrics CSVs, confusion matrices, *_findings.md,
+# stats artifacts, figures/, small analysis parquets) IS tracked as the paper's
+# evidence.

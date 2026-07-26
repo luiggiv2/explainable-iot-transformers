@@ -1,0 +1,13 @@
+# ET-BERT: A Contextualized Datagram Representation with Pre-training Transformers for Encrypted Traffic Classification
+- **Authors**: Xinjie Lin, Gang Xiong, Gaopeng Gou, Zhen Li, Junzheng Shi, Jing Yu
+- **Year / Venue**: 2022 / The Web Conference (WWW '22), Security, Privacy and Trust track (CCF-A / top-tier conference; ACM DL)
+- **DOI**: 10.1145/3485447.3512217
+- **URL**: https://arxiv.org/abs/2202.06335 ; https://dl.acm.org/doi/10.1145/3485447.3512217
+- **Cluster**: 1
+- **Dataset(s)**: ISCX-Tor, ISCX-VPN-Service, Cross-Platform (Android app traffic), CSTNET-TLS 1.3 (self-collected)
+- **Models / Methods**: BERT-style transformer pre-trained from scratch on raw traffic; input is a "BURST" (transmission-guided grouping of packets) converted into datagram-level "language-like" tokens (hex bytes as tokens), using Masked BURST Model and Same-origin BURST Prediction pretext tasks; fine-tuned per downstream classification task on small labeled sets.
+- **Key metrics reported**: F1 = 99.2% on ISCX-Tor (+4.4 pp over prior SOTA); F1 = 98.9% on ISCX-VPN-Service (+5.2 pp); F1 = 92.5% on Cross-Platform/Android (+5.4 pp); F1 = 97.4% on CSTNET-TLS 1.3 (+10.0 pp).
+- **XAI method (if any)**: None in the formal sense; the authors analyze cipher-suite/randomness properties of encrypted payloads to argue why datagram-level pre-training still yields discriminative signal, but no attribution method (SHAP/IG/attention analysis) is used.
+- **Relevance to our RQs**: Directly relevant to RQ1 as the foundational example of pre-training a BERT-style encoder directly on raw/serialized traffic bytes (rather than free-text feature descriptions) and fine-tuning on small labeled sets for traffic classification — establishes that transformer encoders can beat classical/DL traffic classifiers when traffic is given a "language-like" representation. Useful contrast for our approach, which serializes structured flow *features* (not raw packet bytes) into natural-language sentences.
+- **Stated limitations**: [VERIFICAR] — not detailed in the fetched abstract/summary; original paper likely discusses BURST length limits and pre-training data cost, but this could not be confirmed from the fetched content.
+- **Quotable finding (paraphrased)**: Pre-training a transformer on unlabeled, datagram-level traffic representations lets a small amount of task-specific fine-tuning data generalize substantially better than classical deep-feature approaches across four independent encrypted-traffic benchmarks.
