@@ -7,7 +7,7 @@ fine-tuning, dual-method explainability (Captum Integrated Gradients + SHAP),
 explanation-robustness analysis, statistical tests, and figure generation — on
 the **CICIoT2023** dataset.
 
-> **Authors:** _[fill in]_ · **Status:** under review · **Contact:** _[fill in]_
+> **Author:** Luiggi Ramon Valencia Velez · **Status:** under review · **Contact:** _[fill in]_
 
 ---
 
