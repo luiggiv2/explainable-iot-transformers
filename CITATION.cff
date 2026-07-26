@@ -19,6 +19,5 @@ keywords:
   - transformers
   - IoT
   - CICIoT2023
-# Fill these two after the Zenodo release:
-# version: "v1.0.0"
-# doi: "10.5281/zenodo.XXXXXXX"
+version: "v1.0.0"
+doi: "10.5281/zenodo.21584811"

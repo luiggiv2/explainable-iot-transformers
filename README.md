@@ -1,5 +1,8 @@
 # Explainable Lightweight Transformers for Malicious IoT Traffic Detection
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21584811.svg)](https://doi.org/10.5281/zenodo.21584811)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Reproducibility package for the paper *"Explainable Lightweight Transformers for
 Malicious IoT Traffic Detection"* (working title). This repository contains the
 full, script-driven pipeline — data preparation, classical baselines, DistilBERT
@@ -140,10 +143,21 @@ Full breakdowns: `data/baselines_metrics.csv`, `data/transformer_metrics.csv`,
 
 ## Citing
 
-If you use this code, please cite the paper (citation to be added on publication)
-and the CICIoT2023 dataset:
+If you use this code, please cite the paper (citation to be added on publication),
+this software archive, and the CICIoT2023 dataset:
 
 ```bibtex
+@software{valenciavelez2026explainableiot,
+  author    = {Valencia Velez, Luiggi Ramon},
+  title     = {Explainable Lightweight Transformers for Malicious IoT
+               Traffic Detection},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {v1.0.0},
+  doi       = {10.5281/zenodo.21584811},
+  url       = {https://doi.org/10.5281/zenodo.21584811}
+}
+
 @inproceedings{neto2023ciciot,
   title     = {CICIoT2023: A Real-Time Dataset and Benchmark for Large-Scale
                Attacks in IoT Environment},
