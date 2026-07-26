@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Explainable Lightweight Transformers for Malicious IoT Traffic Detection"
+abstract: >-
+  Reproducibility package: a fine-tuned DistilBERT over a textual serialization
+  of CICIoT2023 flow windows, benchmarked against classical baselines, with a
+  dual-method (Captum Integrated Gradients + SHAP) explainability and
+  explanation-robustness analysis.
+type: software
+authors:
+  - family-names: "Valencia Velez"
+    given-names: "Luiggi Ramon"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add your ORCID if you have one
+license: MIT
+repository-code: "https://github.com/luiggiv2/explainable-iot-transformers"
+keywords:
+  - intrusion detection
+  - explainable AI
+  - transformers
+  - IoT
+  - CICIoT2023
+# Fill these two after the Zenodo release:
+# version: "v1.0.0"
+# doi: "10.5281/zenodo.XXXXXXX"
