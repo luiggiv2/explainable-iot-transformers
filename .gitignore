@@ -12,6 +12,7 @@ CLAUDE.md
 
 # ---- Manuscript drafts (published via the journal / a separate preprint) ----
 sections/
+manuscript/
 
 # ---- CICIoT2023 dataset: NOT redistributed (see README; download from CIC) ----
 data/raw/
