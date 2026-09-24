@@ -1,0 +1,9 @@
+class,eligible,selected
+Benign,443,120
+BruteForce,80,80
+DDoS,2943,120
+DoS,1126,120
+Mirai,1018,120
+Recon,289,120
+Spoofing,354,120
+Web,75,75

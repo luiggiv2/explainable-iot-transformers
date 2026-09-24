@@ -6,14 +6,6 @@ __pycache__/
 .DS_Store
 **/.DS_Store
 
-# ---- Internal tooling (not part of the scientific artifact) ----
-.claude/
-CLAUDE.md
-
-# ---- Manuscript drafts (published via the journal / a separate preprint) ----
-sections/
-manuscript/
-
 # ---- CICIoT2023 dataset: NOT redistributed (see README; download from CIC) ----
 data/raw/
 
@@ -23,11 +15,17 @@ data/subset_60k.parquet
 data/splits/
 data/serialized/
 
+# Revised leakage-safe experiment workspace. Compact metrics/manifests under
+# data/revision/results remain trackable; regenerated rows and models do not.
+data/revision/subset_60k.parquet
+data/revision/splits/
+data/revision/serialized/
+data/revision/models/
+data/revision/runs/**/model/
+data/revision/runs/**/models/
+
 # ---- Trained models (regenerable via scripts 03-04; large) ----
 data/models/
-
-# ---- Copyrighted publisher PDFs (literature; do not redistribute) ----
-research/*.pdf
 
 # ---- Transient logs ----
 data/*.log
@@ -36,3 +34,6 @@ data/*.log
 # Everything else under data/ (metrics CSVs, confusion matrices, *_findings.md,
 # stats artifacts, figures/, small analysis parquets) IS tracked as the paper's
 # evidence.
+
+# Resume checkpoints (duplicates of the final per-sample files)
+data/revision/**/*_progress.parquet

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-07T04:59:04.214411+00:00",
+  "label": "ig",
+  "resamples": 10000,
+  "seed": 42,
+  "feature_count": 39,
+  "inputs": {
+    "per_sample_sha256": "611c2f23e7915a6ccc9ce38aa730032e1257f427b4dc595682bb8c6b2c642745",
+    "attribution_sha256": "b02466abe8a7b45b4d467f8e1a65685a3d8c7e3f4c4cfd7e26609aaddc97d87c"
+  },
+  "outputs": {
+    "csv_sha256": "428cd41db3ece818f19254e8cd259d3476b954a3cab54d9414378072da4efaf7",
+    "summary_sha256": "e22d6a1f753735992f9473d18c243012ad3bca9ac404c1163d3d2dad0ccac6e4"
+  }
+}

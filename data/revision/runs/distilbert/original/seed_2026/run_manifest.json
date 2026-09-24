@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-08-27T12:24:30.677236+00:00",
+  "git_commit": "34811ec5035c943d179e904e67f4e8e675c43a24",
+  "model_name": "distilbert-base-uncased",
+  "feature_set": "original",
+  "seed": 2026,
+  "classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web"
+  ],
+  "serialized_dir": "data/revision/serialized",
+  "run_dir": "data/revision/runs/distilbert/original/seed_2026",
+  "model_dir": "data/revision/runs/distilbert/original/seed_2026/model",
+  "train_precision": "bf16_autocast",
+  "validation_precision": "fp32",
+  "test_precision": "fp32",
+  "device": "mps",
+  "max_length": 224,
+  "batch_size": 32,
+  "eval_batch_size": 64,
+  "learning_rate": 2e-05,
+  "max_epochs": 15,
+  "patience": 4,
+  "warmup_fraction": 0.1,
+  "best_epoch": 10,
+  "best_val_macro_f1_fp32": 0.697805106722591,
+  "test_macro_f1_fp32": 0.6930979446319905,
+  "test_accuracy_fp32": 0.7805646290247317,
+  "rows": {
+    "train": 42853,
+    "validation": 8572,
+    "test": 8572
+  },
+  "sha256": {
+    "serialized_test": "a209b9fdfe3152689a445954a7182819541ed9f20d27d611c7ae1a2829c196f8",
+    "checkpoint": "684b1a9736672101a5d0c5f58b3165ce69cd4f9befa24c6bc65da8d90bf62160",
+    "test_predictions": "9b8b466b858b326f4ed84446cfb6f684c829298132c4b476194519fff0f9fb1d"
+  },
+  "consistency_checks": {
+    "prediction_array_equal": true,
+    "confusion_reconstructed_equal": true
+  }
+}

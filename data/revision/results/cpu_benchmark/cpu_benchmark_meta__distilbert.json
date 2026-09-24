@@ -1,0 +1,14 @@
+{
+  "family": "distilbert",
+  "torch": "2.13.0",
+  "validation": {
+    "1": true,
+    "64": true
+  },
+  "sizes_mb": {
+    "distilbert": 268.563831
+  },
+  "input_sha256": {
+    "checkpoint": "6314ebec88bf3f84b2856d6e2c6ebf3da1079220bb3ae59b9e6bb9068e2ef2b5"
+  }
+}

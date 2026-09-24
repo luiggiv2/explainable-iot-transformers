@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-08-24T20:44:15.024478+00:00",
+  "git_commit": "34811ec5035c943d179e904e67f4e8e675c43a24",
+  "feature_set": "original",
+  "features": [
+    "Protocol Type",
+    "Time_To_Live",
+    "Rate",
+    "Header_Length",
+    "fin_flag_number",
+    "syn_flag_number",
+    "rst_flag_number",
+    "psh_flag_number",
+    "ack_flag_number",
+    "ece_flag_number",
+    "cwr_flag_number",
+    "ack_count",
+    "syn_count",
+    "fin_count",
+    "rst_count",
+    "HTTP",
+    "HTTPS",
+    "DNS",
+    "Telnet",
+    "SMTP",
+    "SSH",
+    "IRC",
+    "TCP",
+    "UDP",
+    "DHCP",
+    "ARP",
+    "ICMP",
+    "IGMP",
+    "IPv",
+    "LLC",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Std",
+    "Tot size",
+    "IAT",
+    "Number",
+    "Variance"
+  ],
+  "seed": 42,
+  "models": [
+    "rf",
+    "xgb",
+    "svm"
+  ],
+  "selected_svm_c": 10.0,
+  "split_dir": "data/revision/splits",
+  "rows": {
+    "train": 42853,
+    "validation": 8572,
+    "test": 8572
+  },
+  "split_sha256": {
+    "train": "7a0aec707073db5754d00ec7f0cfee0596685650aa0e90b1b11ac1624c647730",
+    "val": "ef1797e3ea215fd3286d0134d33295c33cdddbae5c7daed1d2e988e01fa6b42b",
+    "test": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35"
+  },
+  "artifacts": {
+    "rf": {
+      "model": "44ed85b89d0092668a8958bceee9d7b882074bc3e59a781d5c7fafc059712378",
+      "predictions": "88eca4e4af887ab8f46adfd3decd873d9dee06b138355f06b323425576d0202c",
+      "confusion_reconstructed_equal": true
+    },
+    "xgb": {
+      "model": "f206c06c4e22f45f53429df16acc83242b4bfc511aa0a977448a43db7d9428e7",
+      "predictions": "51fd62ce2e95632ba0e387f76f7b3b74cfb5ab7427cd4927895328d2ffee291d",
+      "confusion_reconstructed_equal": true
+    },
+    "svm": {
+      "model": "b019b95ace8bf9eeb916b8fa0798d255c01d9016124c2bec5e9087fc13e268a2",
+      "predictions": "d1981a6c44772756ff83141ff38105fc99cc5f6a1a877af42b685c76fb77f7b3",
+      "confusion_reconstructed_equal": true
+    }
+  }
+}

@@ -1,0 +1,5 @@
+diagnostic,features,accuracy,macro_f1
+class-prior dummy,none,0.43012132524498364,0.07518965657884004
+Number only,Number,0.5073495100326645,0.15119511530274604
+Protocol Type only,Protocol Type,0.5233317778814746,0.22876517031029384
+Number + Protocol Type,"Number, Protocol Type",0.6093093793747083,0.35611848397149726

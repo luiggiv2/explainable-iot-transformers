@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-04T22:38:59.552155+00:00",
+  "git_commit": "34811ec5035c943d179e904e67f4e8e675c43a24",
+  "model_name": "distilbert-base-uncased",
+  "feature_set": "no_number",
+  "seed": 2026,
+  "classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web"
+  ],
+  "serialized_dir": "data/revision/serialized/no_number",
+  "run_dir": "data/revision/runs/distilbert/no_number/seed_2026",
+  "model_dir": "data/revision/runs/distilbert/no_number/seed_2026/model",
+  "train_precision": "bf16_autocast",
+  "validation_precision": "fp32",
+  "test_precision": "fp32",
+  "device": "mps",
+  "max_length": 224,
+  "batch_size": 32,
+  "eval_batch_size": 64,
+  "learning_rate": 2e-05,
+  "max_epochs": 15,
+  "patience": 4,
+  "warmup_fraction": 0.1,
+  "best_epoch": 12,
+  "best_val_macro_f1_fp32": 0.6975377522626149,
+  "test_macro_f1_fp32": 0.6878250994002066,
+  "test_accuracy_fp32": 0.7746150256649557,
+  "rows": {
+    "train": 42853,
+    "validation": 8572,
+    "test": 8572
+  },
+  "sha256": {
+    "serialized_test": "db6801f90cf32380cc70c74275b5ec01eedb694bd7b87a6e5f9c146a1e6f0b08",
+    "checkpoint": "72d0f6703c5a54ffb42dcd528d9e2103b8e96f7d2de8fb2ec73354b5338982ef",
+    "test_predictions": "5747d767d3996065cf555516abd8f5e25dd28b2873fbf9aa8b3954d34d8e316f"
+  },
+  "consistency_checks": {
+    "prediction_array_equal": true,
+    "confusion_reconstructed_equal": true
+  }
+}

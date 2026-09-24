@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-08-24T20:44:38.142253+00:00",
+  "git_commit": "34811ec5035c943d179e904e67f4e8e675c43a24",
+  "feature_set": "no_protocol",
+  "features": [
+    "Time_To_Live",
+    "Rate",
+    "Header_Length",
+    "fin_flag_number",
+    "syn_flag_number",
+    "rst_flag_number",
+    "psh_flag_number",
+    "ack_flag_number",
+    "ece_flag_number",
+    "cwr_flag_number",
+    "ack_count",
+    "syn_count",
+    "fin_count",
+    "rst_count",
+    "HTTP",
+    "HTTPS",
+    "DNS",
+    "Telnet",
+    "SMTP",
+    "SSH",
+    "IRC",
+    "TCP",
+    "UDP",
+    "DHCP",
+    "ARP",
+    "ICMP",
+    "IGMP",
+    "IPv",
+    "LLC",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Std",
+    "Tot size",
+    "IAT",
+    "Number",
+    "Variance"
+  ],
+  "seed": 42,
+  "models": [
+    "rf",
+    "xgb"
+  ],
+  "selected_svm_c": null,
+  "split_dir": "data/revision/splits",
+  "rows": {
+    "train": 42853,
+    "validation": 8572,
+    "test": 8572
+  },
+  "split_sha256": {
+    "train": "7a0aec707073db5754d00ec7f0cfee0596685650aa0e90b1b11ac1624c647730",
+    "val": "ef1797e3ea215fd3286d0134d33295c33cdddbae5c7daed1d2e988e01fa6b42b",
+    "test": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35"
+  },
+  "artifacts": {
+    "rf": {
+      "model": "041c8397f60c8f3af687f13e723c94a7e6afb96af10ccf0c81b492c240544a24",
+      "predictions": "ac0020171c25c71ea09d0ecb3757cfbc624338ce7b59abbdcc7533219301ebc1",
+      "confusion_reconstructed_equal": true
+    },
+    "xgb": {
+      "model": "1caf41c388895d3103cb67779bb4e45f8b025a37612827c42395c7f1fe2661a5",
+      "predictions": "5c7247206612f4edb164d2df224b0c3f00c6339ae1961eab914956bd2c7d870f",
+      "confusion_reconstructed_equal": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "n_records": 1440,
+  "n_flows": 480,
+  "classes": [
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Recon",
+    "Spoofing",
+    "Web"
+  ],
+  "pearson_r_preserved_vs_jaccard": 0.9589961119753956,
+  "pearson_r_preserved_vs_count": 0.9537714607123576,
+  "exact_permutation_p_all_classes": 0.0002728174603174603,
+  "bootstrap_resamples": 10000,
+  "bootstrap_seed": 42,
+  "bootstrap_unit": "flow (SampleID), resampled within class",
+  "bootstrap_ci95_jaccard": [
+    0.8974168018695111,
+    0.9772097703809651
+  ],
+  "bootstrap_nan_fraction": 0.0,
+  "dropped_classes": [
+    "Mirai",
+    "DDoS"
+  ],
+  "pearson_r_without_dropped": 0.9818619222028045,
+  "exact_permutation_p_without_dropped": 0.006944444444444444,
+  "pooled_jaccard_preserved": 0.35756901551880627,
+  "pooled_jaccard_flipped": 0.21692572833651674,
+  "pooled_spearman_preserved": 0.5329684121274015,
+  "pooled_spearman_flipped": 0.434845286855977,
+  "n_preserved": 717,
+  "n_flipped": 723
+}

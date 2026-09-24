@@ -1,0 +1,21 @@
+{
+  "family": "classic",
+  "validation": {
+    "rf:1": true,
+    "svm:1": true,
+    "xgb:1": true,
+    "rf:64": true,
+    "svm:64": true,
+    "xgb:64": true
+  },
+  "sizes_mb": {
+    "rf": 61.507546,
+    "svm": 0.993378,
+    "xgb": 1.538271
+  },
+  "input_sha256": {
+    "rf": "44ed85b89d0092668a8958bceee9d7b882074bc3e59a781d5c7fafc059712378",
+    "svm": "b019b95ace8bf9eeb916b8fa0798d255c01d9016124c2bec5e9087fc13e268a2",
+    "xgb": "f206c06c4e22f45f53429df16acc83242b4bfc511aa0a977448a43db7d9428e7"
+  }
+}

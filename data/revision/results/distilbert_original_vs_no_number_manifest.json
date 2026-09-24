@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T17:05:06.766384+00:00",
+  "comparison": "no_number - original",
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "bootstrap_resamples_per_seed": 4000,
+  "bootstrap_seed": 42,
+  "test_rows_per_seed": 8572,
+  "common_protocol": {
+    "git_commit": "34811ec5035c943d179e904e67f4e8e675c43a24",
+    "model_name": "distilbert-base-uncased",
+    "classes": [
+      "Benign",
+      "BruteForce",
+      "DDoS",
+      "DoS",
+      "Mirai",
+      "Recon",
+      "Spoofing",
+      "Web"
+    ],
+    "train_precision": "bf16_autocast",
+    "validation_precision": "fp32",
+    "test_precision": "fp32",
+    "device": "mps",
+    "max_length": 224,
+    "batch_size": 32,
+    "eval_batch_size": 64,
+    "learning_rate": 2e-05,
+    "max_epochs": 15,
+    "patience": 4,
+    "warmup_fraction": 0.1,
+    "rows": {
+      "train": 42853,
+      "validation": 8572,
+      "test": 8572
+    }
+  },
+  "representative_checkpoints": {
+    "original": 123,
+    "no_number": 42,
+    "selection_rule": "median validation macro-F1; test metrics not used"
+  },
+  "inputs": [
+    {
+      "feature_set": "original",
+      "seed": 42,
+      "path": "data/revision/runs/distilbert/original/seed_42/test_predictions.parquet",
+      "sha256": "c1a5a9549c90e697c53b9d0c4cfd1d6b585be7978660ea73e39a89c86e9f09ca",
+      "manifest_prediction_sha256": "c1a5a9549c90e697c53b9d0c4cfd1d6b585be7978660ea73e39a89c86e9f09ca"
+    },
+    {
+      "feature_set": "no_number",
+      "seed": 42,
+      "path": "data/revision/runs/distilbert/no_number/seed_42/test_predictions.parquet",
+      "sha256": "fbec3efe5ec7a2e02f33398f06f3ec0e8a3058a960a8460bc6b4b5ba58dbea6c",
+      "manifest_prediction_sha256": "fbec3efe5ec7a2e02f33398f06f3ec0e8a3058a960a8460bc6b4b5ba58dbea6c"
+    },
+    {
+      "feature_set": "original",
+      "seed": 123,
+      "path": "data/revision/runs/distilbert/original/seed_123/test_predictions.parquet",
+      "sha256": "d9dfb2325c175654e699d8f981fb5463eee2c9069c1d86c9eb09cba0f9837e67",
+      "manifest_prediction_sha256": "d9dfb2325c175654e699d8f981fb5463eee2c9069c1d86c9eb09cba0f9837e67"
+    },
+    {
+      "feature_set": "no_number",
+      "seed": 123,
+      "path": "data/revision/runs/distilbert/no_number/seed_123/test_predictions.parquet",
+      "sha256": "0803873ead867d36f3a58e9b7654d7a5c381052ada2103f2650feeb6cf3eef32",
+      "manifest_prediction_sha256": "0803873ead867d36f3a58e9b7654d7a5c381052ada2103f2650feeb6cf3eef32"
+    },
+    {
+      "feature_set": "original",
+      "seed": 2026,
+      "path": "data/revision/runs/distilbert/original/seed_2026/test_predictions.parquet",
+      "sha256": "9b8b466b858b326f4ed84446cfb6f684c829298132c4b476194519fff0f9fb1d",
+      "manifest_prediction_sha256": "9b8b466b858b326f4ed84446cfb6f684c829298132c4b476194519fff0f9fb1d"
+    },
+    {
+      "feature_set": "no_number",
+      "seed": 2026,
+      "path": "data/revision/runs/distilbert/no_number/seed_2026/test_predictions.parquet",
+      "sha256": "5747d767d3996065cf555516abd8f5e25dd28b2873fbf9aa8b3954d34d8e316f",
+      "manifest_prediction_sha256": "5747d767d3996065cf555516abd8f5e25dd28b2873fbf9aa8b3954d34d8e316f"
+    }
+  ]
+}

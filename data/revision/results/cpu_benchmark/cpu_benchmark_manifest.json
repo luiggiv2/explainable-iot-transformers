@@ -1,0 +1,57 @@
+{
+  "schema_version": 2,
+  "created_at_utc": "2026-09-07T04:08:10.699834+00:00",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "torch": "2.13.0",
+  "threads": 4,
+  "warmup_runs": 1,
+  "repetitions": 5,
+  "batch_sizes": [
+    1,
+    64
+  ],
+  "cohort_rows": 512,
+  "process_isolation": {
+    "reason": "PyTorch and XGBoost load incompatible OpenMP runtimes on macOS",
+    "families": [
+      "distilbert",
+      "classic"
+    ],
+    "executed": "sequentially, one family per process"
+  },
+  "all_predictions_match_saved": true,
+  "validation": {
+    "distilbert": {
+      "1": true,
+      "64": true
+    },
+    "classic": {
+      "rf:1": true,
+      "svm:1": true,
+      "xgb:1": true,
+      "rf:64": true,
+      "svm:64": true,
+      "xgb:64": true
+    }
+  },
+  "inputs": {
+    "models": {
+      "rf": "44ed85b89d0092668a8958bceee9d7b882074bc3e59a781d5c7fafc059712378",
+      "svm": "b019b95ace8bf9eeb916b8fa0798d255c01d9016124c2bec5e9087fc13e268a2",
+      "xgb": "f206c06c4e22f45f53429df16acc83242b4bfc511aa0a977448a43db7d9428e7"
+    },
+    "checkpoint_sha256": "6314ebec88bf3f84b2856d6e2c6ebf3da1079220bb3ae59b9e6bb9068e2ef2b5",
+    "test_split_sha256": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35",
+    "serialized_test_sha256": "a209b9fdfe3152689a445954a7182819541ed9f20d27d611c7ae1a2829c196f8",
+    "distilbert_predictions_sha256": "d9dfb2325c175654e699d8f981fb5463eee2c9069c1d86c9eb09cba0f9837e67",
+    "cohort_sha256": "373a62db8e7130bc704c2b0d3cd9696e054ebceb4d754a72358d8eb54613abe3"
+  },
+  "outputs": {
+    "repetitions_sha256": "2c7d43eb7960fee5024a8cc8e4dab955426844f26e9ceb8e7880d671c704b412",
+    "summary_sha256": "7e6865166892df5e7e3cfe46286c18237b4ae8ab1c3f7e2a223daa0c9b438637",
+    "markdown_sha256": "362cbc98d54ccee9f0a7246f10e7d58f2a8b3fe9165a01b3d40b50884eedb325"
+  }
+}

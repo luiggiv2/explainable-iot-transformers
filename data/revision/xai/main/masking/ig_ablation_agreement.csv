@@ -1,0 +1,9 @@
+class,spearman,top5_overlap_count,ig_top1,ablation_top1
+Benign,0.8427125506072874,2,ttl,ttl
+BruteForce,0.7809716599190284,3,max,max
+DDoS,0.8348178137651823,3,proto_num,proto_num
+DoS,0.8761133603238866,3,tot_size,rate
+Mirai,0.7091093117408906,3,proto_num,proto_num
+Recon,0.7396761133603239,2,num,min
+Spoofing,0.8678137651821863,3,num,max
+Web,0.8585020242914979,2,rate,max

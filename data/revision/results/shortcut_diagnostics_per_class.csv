@@ -1,0 +1,33 @@
+diagnostic,class,f1
+class-prior dummy,Benign,0.0
+class-prior dummy,BruteForce,0.0
+class-prior dummy,DDoS,0.6015172526307203
+class-prior dummy,DoS,0.0
+class-prior dummy,Mirai,0.0
+class-prior dummy,Recon,0.0
+class-prior dummy,Spoofing,0.0
+class-prior dummy,Web,0.0
+Number only,Benign,0.4864070536370316
+Number only,BruteForce,0.0
+Number only,DDoS,0.7231538687849367
+Number only,DoS,0.0
+Number only,Mirai,0.0
+Number only,Recon,0.0
+Number only,Spoofing,0.0
+Number only,Web,0.0
+Protocol Type only,Benign,0.0
+Protocol Type only,BruteForce,0.0
+Protocol Type only,DDoS,0.6448018500998633
+Protocol Type only,DoS,0.3834411384217335
+Protocol Type only,Mirai,0.7943595769682726
+Protocol Type only,Recon,0.007518796992481203
+Protocol Type only,Spoofing,0.0
+Protocol Type only,Web,0.0
+Number + Protocol Type,Benign,0.5146248410343366
+Number + Protocol Type,BruteForce,0.0
+Number + Protocol Type,DDoS,0.7848004094165814
+Number + Protocol Type,DoS,0.4227039361095265
+Number + Protocol Type,Mirai,0.7938931297709924
+Number + Protocol Type,Recon,0.007518796992481203
+Number + Protocol Type,Spoofing,0.32540675844806005
+Number + Protocol Type,Web,0.0

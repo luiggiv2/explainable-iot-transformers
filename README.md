@@ -10,7 +10,14 @@ fine-tuning, dual-method explainability (Captum Integrated Gradients + SHAP),
 explanation-robustness analysis, statistical tests, and figure generation — on
 the **CICIoT2023** dataset.
 
-> **Author:** Luiggi Ramon Valencia Velez · **Status:** under review · **Contact:** _[fill in]_
+> **Author:** Luiggi Valencia Vélez · **Status:** manuscript in preparation for submission · **Target:** *Internet of Things* (Elsevier), Subscription route · **Contact:** luiggiv2@hotmail.com · ORCID [0009-0003-7783-9023](https://orcid.org/0009-0003-7783-9023)
+
+> **Version note:** this version supersedes v1.0.0. An audit of the first
+> experiment found cross-split serialization duplicates and a mismatch between a
+> separately exported FP32 prediction array and the BF16-reported confusion
+> matrix. All results are now leakage-safe, run-owned artifacts under
+> `data/revision/`; the superseded pipeline remains available in the v1.0.0
+> archive on Zenodo.
 
 ---
 
@@ -23,21 +30,32 @@ a strict per-class protocol. The contribution is **not** accuracy or efficiency 
 the encoder is competitive but not superior to gradient-boosted trees, and is the
 heaviest model — but an **auditing-oriented explainability analysis**:
 
-- **RQ1** — DistilBERT reaches macro-F1 **0.707** (XGBoost 0.734, RF 0.726, SVM
-  0.655); below XGBoost on macro-F1, indistinguishable from RF on accuracy.
-- **RQ2** — Integrated Gradients (on DistilBERT) and SHAP (on XGBoost)
-  independently recover documented attack signatures (`ssh`→BruteForce, size
-  statistics→Mirai, `syn`→Recon), corroborated by a gradient-free ablation check.
-- **RQ3** — Attribution exposes systematic dependencies invisible to aggregate
-  metrics: a spurious ARP dependency (Spoofing), divergent DDoS strategies, and a
-  **window-size collection artifact** both models exploit.
-- **RQ4** — Explanation stability co-varies with prediction stability across
-  classes (r ≈ 0.85), governed by class separability; a predicted-class control
-  shows the coupling is empirical, not definitional.
-- **RQ5** — The transformer is the heaviest option (~172× XGBoost's footprint,
-  ~6,580× its per-sample latency), with no offsetting accuracy advantage.
+- **RQ1** — DistilBERT reaches macro-F1 **0.7058 ± 0.0112** over three seeds
+  (XGBoost 0.7278, RF 0.7223, SVM 0.6672). The deficit against XGBoost holds in
+  every seed; the deficit against RF is **unresolved** — its bootstrap interval
+  contains zero in two seeds of three and McNemar never separates the two.
+- **RQ2** — Integrated Gradients (on DistilBERT) and SHAP (on XGBoost) reach
+  comparable accuracy from **measurably different evidence**: the tree ranks `ssh`
+  first for BruteForce, the encoder ranks it 7th of 39. Mean rank correlation
+  +0.464, top-5 overlap 37.5%. A gradient-free masking check confirms the encoder's
+  profile is real, not an attribution artifact.
+- **RQ3** — Attribution exposes dependencies invisible to aggregate metrics: a
+  spurious ARP dependency (Spoofing — 88.2% of those windows carry no ARP traffic),
+  divergent DDoS strategies, and a **window-size collection artifact** both model
+  families exploit. Retraining without it costs only 0.0057 macro-F1, so the
+  shortcut is redundant rather than load-bearing — and removing it restores `ssh`
+  as the encoder's brute-force signal.
+- **RQ4** — Explanation stability co-varies with prediction stability across classes
+  (r = **+0.959**, 95% CI [+0.897, +0.977]), and survives dropping the two
+  volumetric classes (r = +0.982, p = 0.0069). An ε = 0 control is **bitwise
+  identical**, so the measured instability is input sensitivity, not method noise.
+- **RQ5** — Under a **controlled same-CPU benchmark** (4 threads pinned), the
+  transformer is the heaviest option: 175× XGBoost's footprint, 123× its latency at
+  batch 1 and 2,139× at batch 64 — batching helps the trees 19–31× and the encoder
+  1.08×, so the gap widens.
 
-Every quantitative claim in the paper traces to a named artifact under `data/`.
+Every quantitative claim in the paper traces to a manifest-backed artifact under
+`data/revision/`.
 
 ---
 
@@ -45,18 +63,17 @@ Every quantitative claim in the paper traces to a named artifact under `data/`.
 
 ```
 scripts/            Numbered, seeded pipeline (run in order; see below)
-data/                Result artifacts (metrics, confusion matrices, findings,
-                     stats, figures). Raw/derived dataset and models are NOT
-                     committed — regenerate them (see "Data" and "Reproduce").
-  figures/           Publication figures (PDF + PNG) and their index
-references/          refs.bib (verified) + DOI verification logs
-research/            One Markdown fact sheet per reviewed paper (literature notes)
+data/                Raw-class scan used by script 01 (class_distribution_raw.csv).
+                     Raw/derived dataset and models are NOT committed —
+                     regenerate them (see "Data" and "Reproduce").
+  revision/          Result artifacts: metrics, predictions, confusion matrices,
+                     XAI outputs, statistics and figures, each with a manifest
 requirements-lock.txt  Pinned dependency versions
 ```
 
 Not tracked (see `.gitignore`): `data/raw/` (the CICIoT2023 CSVs), `data/models/`
 and the derived `data/{splits,serialized,subset_60k.parquet}` (regenerable),
-`.venv/`, and the copyrighted publisher PDFs.
+and `.venv/`.
 
 ---
 
@@ -76,8 +93,8 @@ pip install -r requirements-lock.txt
 ```
 
 > **macOS note:** do not `import torch` in the same process as XGBoost/scikit-learn
-> for CPU-only stats — duplicate OpenMP runtimes crash the interpreter. Scripts
-> `13`/`15`/`16` are deliberately torch-free. In long Captum loops, call
+> for CPU-only stats — duplicate OpenMP runtimes crash the interpreter. Script
+> `29` isolates each model family in its own child process for this reason. In long Captum loops, call
 > `torch.mps.empty_cache()` periodically (already done in the scripts) to avoid
 > MPS slowdown.
 
@@ -101,43 +118,42 @@ regenerated from these files by scripts `01`–`02`.
 ## Reproduce
 
 Run the numbered scripts in order (from the repo root, with the venv active).
-Each writes its outputs under `data/`.
+Each writes its outputs under `data/revision/`.
 
 | Step | Script | Produces |
 |---|---|---|
-| 1 | `01_make_subset.py` | Stratified ~60k subset + 70/15/15 splits (seed 42) |
-| 2 | `02_serialize.py` | `key=value` textual serialization of each flow window |
-| 3 | `03_baselines.py` | RF / SVM / XGBoost metrics, confusion matrices, models |
-| 4 | `04_finetune.py` | DistilBERT fine-tuning; metrics, training log, checkpoint |
-| 5 | `05_captum_ig.py` | Layer Integrated Gradients attributions (per class) |
-| 6 | `06_shap_xgb.py` | TreeSHAP attributions for XGBoost (same protocol) |
-| 7 | `07_xai_synthesis.py` | Cross-model IG-vs-SHAP comparison (RQ2/RQ3) |
-| 8 | `08_robustness.py` | Perturbation-based explanation robustness (RQ4) |
-| 9 | `09_ig_noise_floor.py` | ε=0 IG determinism control |
-| 10 | `10_robustness_synthesis.py` | RQ4 findings synthesis |
-| 11 | `11_figures.py` | Publication figures → `data/figures/` |
-| 12 | `12_ablation_crosscheck.py` | Gradient-free ablation cross-check of IG |
-| 13 | `13_stats.py` | McNemar, RQ4 coupling CI/permutation, ranking bootstrap |
-| 14 | `14_predicted_class_control.py` | RQ4 predicted-class control |
-| 15 | `15_macrof1_boot.py` | Macro-F1 difference bootstrap + RF seed variance |
-| 16 | `16_dataset_stats.py` | Per-class `Number`/`ARP` provenance stats |
+| 1 | `01_make_subset.py` | Stratified ~60k subset + leakage-safe grouped splits + source IDs |
+| 2 | `02_serialize.py` | Registered original / feature-ablation serializations |
+| 3 | `03_baselines.py` | Run-owned RF / SVM / XGBoost metrics, predictions and models |
+| 4 | `04_finetune.py` | Multiseed DistilBERT runs with FP32 evaluation and checksums |
+| 17 | `17_reproducibility_audit.py` | Split, duplicate, hash and prediction-consistency audit |
+| 18 | `18_feature_ablation_summary.py` | Registered tree ablations and shortcut diagnostics |
+| 19 | `19_compare_predictions.py` | `SampleID`-paired model tests and macro-F1 bootstrap |
+| 20 | `20_multiseed_summary.py` | Across-seed aggregation per feature set |
+| 21 | `21_compare_feature_sets.py` | Paired original-vs-`no_number` comparison |
+| 22 | `22_make_xai_cohorts.py` | Fixed, hashed XAI cohorts (jointly correct rows) |
+| 23 | `23_captum_ig_revised.py` | Layer-IG attributions + convergence audit |
+| 24 | `24_shap_xgb_revised.py` | TreeSHAP on the identical cohort |
+| 25 | `25_xai_synthesis_revised.py` | Cross-model IG-vs-SHAP comparison (RQ2/RQ3) |
+| 26 | `26_compare_ig_feature_sets.py` | IG before/after removing `Number` |
+| 27 | `27_ablation_crosscheck_revised.py` | Gradient-free field-masking cross-check |
+| 28 | `28_robustness_revised.py` | Perturbation-based explanation robustness (RQ4) |
+| 29 | `29_cpu_inference_benchmark.py` | Controlled same-CPU latency benchmark (RQ5) |
+| 30 | `30_ig_quality_audit.py` | Relative IG convergence-residual audit |
+| 31 | `31_ig_noise_floor_revised.py` | ε = 0 attribution floor on the robustness cohort |
+| 33 | `33_attribution_rank_stability.py` | Bootstrap stability of per-class rankings |
+| 34 | `34_robustness_coupling.py` | Class-level prediction/explanation stability coupling (r, flow-cluster bootstrap CI) |
 
-Steps 5–16 depend on the models from steps 3–4. All randomness uses **seed 42**.
+These scripts produce every number in the current manuscript. The superseded
+single-seed pipeline (former scripts 05–16) and its outputs are preserved in the
+v1.0.0 archive on Zenodo and are not part of this version.
+
+Steps 22–34 depend on the models from steps 3–4. The revised DistilBERT protocol
+uses seeds 42, 123 and 2026 for the two principal configurations; diagnostic
+ablations begin with seed 42 and expand only if the registered effect threshold
+is met.
 
 ---
-
-## Key results (test split, n = 9,000)
-
-| Model | Macro-F1 | Accuracy | ROC-AUC | Size | Latency |
-|---|---:|---:|---:|---:|---:|
-| **XGBoost** | **0.7344** | 0.7993 | 0.9743 | 1.6 MB | 0.0016 ms |
-| Random Forest | 0.7258 | 0.7849 | 0.9695 | 60 MB | 0.0086 ms |
-| **DistilBERT** | **0.7069** | 0.7811 | 0.9706 | 269 MB | 10.37 ms |
-| SVM | 0.6554 | 0.7694 | 0.9629 | 1.0 MB | 0.81 ms |
-
-Full breakdowns: `data/baselines_metrics.csv`, `data/transformer_metrics.csv`,
-`data/stats_hardening.md`, `data/macrof1_boot.md`, `data/xai_comparison.md`,
-`data/robustness_findings.md`, `data/predclass_control.md`, `data/figures/`.
 
 ---
 
@@ -148,12 +164,12 @@ this software archive, and the CICIoT2023 dataset:
 
 ```bibtex
 @software{valenciavelez2026explainableiot,
-  author    = {Valencia Velez, Luiggi Ramon},
+  author    = {Valencia V{\'e}lez, Luiggi},
   title     = {Explainable Lightweight Transformers for Malicious IoT
                Traffic Detection},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {v1.0.0},
+  version   = {v1.1.0},
   doi       = {10.5281/zenodo.21584811},
   url       = {https://doi.org/10.5281/zenodo.21584811}
 }
@@ -165,8 +181,6 @@ this software archive, and the CICIoT2023 dataset:
   year      = {2023}
 }
 ```
-
-(See `references/refs.bib` for the full, DOI-verified bibliography.)
 
 ---
 

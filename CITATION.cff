@@ -8,9 +8,10 @@ abstract: >-
   explanation-robustness analysis.
 type: software
 authors:
-  - family-names: "Valencia Velez"
-    given-names: "Luiggi Ramon"
-    # orcid: "https://orcid.org/0000-0000-0000-0000"   # add your ORCID if you have one
+  - family-names: "Valencia Vélez"
+    given-names: "Luiggi"
+    affiliation: "Escuela Colombiana de Ingeniería Julio Garavito"
+    orcid: "https://orcid.org/0009-0003-7783-9023"
 license: MIT
 repository-code: "https://github.com/luiggiv2/explainable-iot-transformers"
 keywords:
@@ -19,5 +20,5 @@ keywords:
   - transformers
   - IoT
   - CICIoT2023
-version: "v1.0.0"
+version: "v1.1.0"
 doi: "10.5281/zenodo.21584811"

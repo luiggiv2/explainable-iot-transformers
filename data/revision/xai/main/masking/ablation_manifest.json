@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T20:43:44.931200+00:00",
+  "feature_set": "original",
+  "device": "mps",
+  "cohort_rows": 880,
+  "feature_count": 39,
+  "inputs": {
+    "checkpoint_sha256": "6314ebec88bf3f84b2856d6e2c6ebf3da1079220bb3ae59b9e6bb9068e2ef2b5",
+    "serialized_test_sha256": "a209b9fdfe3152689a445954a7182819541ed9f20d27d611c7ae1a2829c196f8",
+    "cohort_sha256": "1d201ed8ee3cd6e6c046882b896e65ff134d2296e46c501bb3dfbc2afe7a610a",
+    "ig_attribution_sha256": "b02466abe8a7b45b4d467f8e1a65685a3d8c7e3f4c4cfd7e26609aaddc97d87c"
+  },
+  "outputs": {
+    "per_sample_sha256": "15a8b8167854c392e699b2719ad09242a507ada5ebcd155bdb303f5f31401bd6",
+    "feature_attribution_sha256": "48b152ff92a10215ef0ab4ab492b77b8181ea9923a05778025894172dc23cb49"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-06T19:07:28.190889+00:00",
+  "device": "mps",
+  "seed": 42,
+  "n_per_class": 60,
+  "eps": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "n_steps": 50,
+  "internal_batch_size": 50,
+  "inputs": {
+    "checkpoint_sha256": "6314ebec88bf3f84b2856d6e2c6ebf3da1079220bb3ae59b9e6bb9068e2ef2b5",
+    "test_split_sha256": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35",
+    "serialized_test_sha256": "a209b9fdfe3152689a445954a7182819541ed9f20d27d611c7ae1a2829c196f8",
+    "predictions_sha256": "d9dfb2325c175654e699d8f981fb5463eee2c9069c1d86c9eb09cba0f9837e67",
+    "cohort_sha256": "8150802ebf55a054acc2e827da5b7e58930ebe87c3f2a12c6c4c25d13a4f67f3"
+  },
+  "outputs": {
+    "records_sha256": "0096da90dcd4dc9c92420c22d26d59b80e140807ddde62f677a71223b9251905",
+    "metrics_sha256": "ad1f37b8824f3f2995ae64ab4cdde6be938530f4e05fec3ba08f1b28ef5330f5",
+    "per_class_sha256": "e72d145565da8908f7036b6c8014ae29901fb4b9a887fb61edd967637764c9c5",
+    "summary_sha256": "21a66c45cd4734feaf77214e8d21ab0459fe764a179346baeb1c80832820b610"
+  }
+}

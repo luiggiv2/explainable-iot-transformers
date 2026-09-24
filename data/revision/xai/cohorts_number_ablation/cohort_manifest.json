@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T20:44:08.784779+00:00",
+  "selection_seed": 42,
+  "max_per_class": 60,
+  "checkpoint_selection": {
+    "original": "seed 123, median validation macro-F1",
+    "no_number": "seed 42, median validation macro-F1"
+  },
+  "inputs": {
+    "original_predictions": {
+      "path": "data/revision/runs/distilbert/original/seed_123/test_predictions.parquet",
+      "sha256": "d9dfb2325c175654e699d8f981fb5463eee2c9069c1d86c9eb09cba0f9837e67"
+    },
+    "no_number_predictions": {
+      "path": "data/revision/runs/distilbert/no_number/seed_42/test_predictions.parquet",
+      "sha256": "fbec3efe5ec7a2e02f33398f06f3ec0e8a3058a960a8460bc6b4b5ba58dbea6c"
+    },
+    "xgb_predictions": {
+      "path": "data/revision/runs/baselines/original/test_predictions_xgb.parquet",
+      "sha256": "51fd62ce2e95632ba0e387f76f7b3b74cfb5ab7427cd4927895328d2ffee291d"
+    }
+  },
+  "outputs": {
+    "original_xgb": {
+      "path": "data/revision/xai/cohorts_number_ablation/original_xgb.parquet",
+      "rows": 480,
+      "sha256": "20cc9a1a85024312482e1dd284846282cdbdabccdd6f55ffbdf321fc49b1e935"
+    },
+    "original_no_number": {
+      "path": "data/revision/xai/cohorts_number_ablation/original_no_number.parquet",
+      "rows": 480,
+      "sha256": "14f888539ce4cf9b0ae48415649299a11820a2f913d95ae59ad1698f134da8da"
+    }
+  }
+}

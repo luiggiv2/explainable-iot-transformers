@@ -1,0 +1,9 @@
+class,n,spearman,spearman_top8,top5_overlap,max_abs_difference,identical_fraction
+Benign,15,1.0,1.0,5.0,0.0,1.0
+BruteForce,15,1.0,1.0,5.0,0.0,1.0
+DDoS,15,1.0,1.0,5.0,0.0,1.0
+DoS,15,1.0,1.0,5.0,0.0,1.0
+Mirai,15,1.0,1.0,5.0,0.0,1.0
+Recon,15,1.0,1.0,5.0,0.0,1.0
+Spoofing,15,1.0,1.0,5.0,0.0,1.0
+Web,15,1.0,1.0,5.0,0.0,1.0

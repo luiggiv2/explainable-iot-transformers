@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-05T21:26:11.584085+00:00",
+  "cohort_rows": 480,
+  "cohort_sha256": "14f888539ce4cf9b0ae48415649299a11820a2f913d95ae59ad1698f134da8da",
+  "inputs": {
+    "original_manifest_sha256": "62b28aeb3ceb320314667897236ef5dae1721304945b38825029bf5d0e6c9620",
+    "no_number_manifest_sha256": "f13e74e55208c58177e2206bcca78203ee7def5b2ed8c58ace4ae5764b1c0d6e"
+  },
+  "outputs": {
+    "agreement_sha256": "4f1d791d0d9553ca21af4367f9285148d7c51f5e051a03462c338da92e6d1189",
+    "changes_sha256": "567935f1b8ab8a9285ecc55df99eb667401dc676c359572f090b99db9a5e559c",
+    "summary_sha256": "a89671c9b1a9711dc40edb9d2311aa789cf499cd1a833d04d9c261f48f369a7d"
+  }
+}

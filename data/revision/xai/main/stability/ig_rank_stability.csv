@@ -1,0 +1,9 @@
+class,n,observed_top1,p_stays_top1,p_stays_top3
+Benign,120,ttl,0.8263,1.0
+BruteForce,93,max,0.9968,1.0
+DDoS,120,proto_num,0.9904,1.0
+DoS,120,tot_size,0.9124,1.0
+Mirai,120,proto_num,1.0,1.0
+Recon,120,num,0.8446,1.0
+Spoofing,120,num,0.6717,1.0
+Web,67,rate,0.9972,1.0

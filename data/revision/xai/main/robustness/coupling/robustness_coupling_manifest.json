@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-09-24T03:22:26.782978+00:00",
+  "script": "34_robustness_coupling.py",
+  "inputs": {
+    "../data/revision/xai/main/robustness/robustness_records.parquet": "0096da90dcd4dc9c92420c22d26d59b80e140807ddde62f677a71223b9251905"
+  },
+  "outputs": [
+    "robustness_coupling.json",
+    "robustness_coupling_per_class.csv",
+    "robustness_coupling.md"
+  ]
+}

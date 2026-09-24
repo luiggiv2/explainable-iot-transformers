@@ -1,0 +1,9 @@
+class,shared_features,spearman_abs_importance,top5_overlap_count,top5_overlap_fraction,ig_top1,shap_top1
+Benign,39,0.5677159681056315,2,0.4,ttl,num
+BruteForce,39,0.39754377321642553,2,0.4,max,ssh
+DDoS,39,0.46782950648299787,1,0.2,proto_num,icmp
+DoS,39,0.33637975885092614,1,0.2,tot_size,num
+Mirai,39,0.4012294853162846,3,0.6,proto_num,tot_sum
+Recon,39,0.3842618176888965,1,0.2,num,num
+Spoofing,39,0.6069985559124019,3,0.6,num,num
+Web,39,0.5519451295467672,2,0.4,rate,num

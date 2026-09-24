@@ -1,0 +1,182 @@
+{
+  "schema_version": 2,
+  "created_at_utc": "2026-09-05T17:04:20.450440+00:00",
+  "git_commit": "34811ec5035c943d179e904e67f4e8e675c43a24",
+  "data_root": "data/revision",
+  "distilbert_run_dir": "data/revision/runs/distilbert/original/seed_123",
+  "split_rows": {
+    "train": 42853,
+    "val": 8572,
+    "test": 8572
+  },
+  "provenance_columns": [
+    "SampleID",
+    "SourceFile",
+    "SourceRow",
+    "FeatureGroup"
+  ],
+  "feature_duplicates": {
+    "val_present_in_train": 0,
+    "test_present_in_train": 0,
+    "test_present_in_val": 0
+  },
+  "feature_and_label_duplicates": {
+    "val_present_in_train": 0,
+    "test_present_in_train": 0,
+    "test_present_in_val": 0
+  },
+  "serialized_duplicates": {
+    "original": {
+      "val_present_in_train": 0,
+      "test_present_in_train": 0,
+      "test_present_in_val": 0
+    },
+    "no_number": {
+      "val_present_in_train": 0,
+      "test_present_in_train": 0,
+      "test_present_in_val": 0
+    },
+    "no_protocol": {
+      "val_present_in_train": 0,
+      "test_present_in_train": 0,
+      "test_present_in_val": 0
+    },
+    "no_number_protocol": {
+      "val_present_in_train": 0,
+      "test_present_in_train": 0,
+      "test_present_in_val": 0
+    }
+  },
+  "duplicate_group_summary": {
+    "groups": 58029,
+    "duplicate_groups": 1690,
+    "rows_in_duplicate_groups": 3658,
+    "cross_split_groups": 0,
+    "conflicting_subtype_groups": 609,
+    "conflicting_category_groups": 496,
+    "largest_group_rows": 9
+  },
+  "prediction_check": {
+    "available": true,
+    "aligned": true,
+    "accuracy": 0.7800979934671022,
+    "macro_f1": 0.710494668763131,
+    "confusion_equal": true,
+    "confusion_abs_difference": 0,
+    "confusion_cells_changed": 0,
+    "sample_id_aligned": true,
+    "parquet_prediction_array_equal": true,
+    "parquet_label_array_equal": true,
+    "run_manifest_consistency_checks": {
+      "prediction_array_equal": true,
+      "confusion_reconstructed_equal": true
+    }
+  },
+  "artifacts": [
+    {
+      "path": "data/revision/splits/train.parquet",
+      "bytes": 5395462,
+      "sha256": "7a0aec707073db5754d00ec7f0cfee0596685650aa0e90b1b11ac1624c647730"
+    },
+    {
+      "path": "data/revision/splits/val.parquet",
+      "bytes": 1131007,
+      "sha256": "ef1797e3ea215fd3286d0134d33295c33cdddbae5c7daed1d2e988e01fa6b42b"
+    },
+    {
+      "path": "data/revision/splits/test.parquet",
+      "bytes": 1121802,
+      "sha256": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35"
+    },
+    {
+      "path": "data/revision/serialized/train.parquet",
+      "bytes": 6506762,
+      "sha256": "6efdf1ba48eb5e262a40408223d6e581fea52bcc76374079f5d4855b312a2fbd"
+    },
+    {
+      "path": "data/revision/serialized/val.parquet",
+      "bytes": 1297540,
+      "sha256": "aff2807a09727100a7d3825d6a5fc69c026a09e7edf0f0885eae308217d44d7d"
+    },
+    {
+      "path": "data/revision/serialized/test.parquet",
+      "bytes": 1285134,
+      "sha256": "a209b9fdfe3152689a445954a7182819541ed9f20d27d611c7ae1a2829c196f8"
+    },
+    {
+      "path": "data/revision/serialized/no_number/train.parquet",
+      "bytes": 6468558,
+      "sha256": "a184055f024ff7244b296e7fd80ba8d3aac588aef85082618e2b931ee7eeac19"
+    },
+    {
+      "path": "data/revision/serialized/no_number/val.parquet",
+      "bytes": 1290671,
+      "sha256": "ed991e617d7e0231dd92d2e0671ed938cc58720a710016659052a02191022c06"
+    },
+    {
+      "path": "data/revision/serialized/no_number/test.parquet",
+      "bytes": 1278628,
+      "sha256": "db6801f90cf32380cc70c74275b5ec01eedb694bd7b87a6e5f9c146a1e6f0b08"
+    },
+    {
+      "path": "data/revision/serialized/no_protocol/train.parquet",
+      "bytes": 6426203,
+      "sha256": "8d298202d3f113e95b3e705d1e73884459bba4a29aff6483554b0e042317d413"
+    },
+    {
+      "path": "data/revision/serialized/no_protocol/val.parquet",
+      "bytes": 1282892,
+      "sha256": "1dfa8176057225b9fbfc02dabb3402a7c2f260dd8042557e86a9041775f7f1e2"
+    },
+    {
+      "path": "data/revision/serialized/no_protocol/test.parquet",
+      "bytes": 1269608,
+      "sha256": "ecb2cf44f7bea84f2266d416b82f9ecb2bee4a47233ec707dd0e0982c23ff2f8"
+    },
+    {
+      "path": "data/revision/serialized/no_number_protocol/train.parquet",
+      "bytes": 6385844,
+      "sha256": "2bd97908d4bd22be85ef9db2df3369b20a275c98a259db4b144511350e4df728"
+    },
+    {
+      "path": "data/revision/serialized/no_number_protocol/val.parquet",
+      "bytes": 1273744,
+      "sha256": "6318745c1e9539dcc1f7028fae53b1f21ebdeca866844930aa1c8d76efaba97d"
+    },
+    {
+      "path": "data/revision/serialized/no_number_protocol/test.parquet",
+      "bytes": 1261863,
+      "sha256": "c207a966f85544858fa0889229c4938be13f52db9dacf228ca25181f5547ebfa"
+    },
+    {
+      "path": "data/revision/runs/distilbert/original/seed_123/distilbert_test_preds.npy",
+      "bytes": 68704,
+      "sha256": "e8c68082c06d2afd8bd31f6a1987505e28cf862cfd6a99157a241d8846acfeb6"
+    },
+    {
+      "path": "data/revision/runs/distilbert/original/seed_123/confusion_distilbert.csv",
+      "bytes": 274,
+      "sha256": "0acc5131c218002e8eb0cead4a44b928bc690162d9ddce619b2cea096bd18051"
+    },
+    {
+      "path": "data/revision/runs/distilbert/original/seed_123/transformer_metrics.csv",
+      "bytes": 1156,
+      "sha256": "a6f39df5fad27eaed29f2b1da7f0228753a337e2fa7e96eb0994f87a3ff91b17"
+    },
+    {
+      "path": "data/revision/runs/distilbert/original/seed_123/test_predictions.parquet",
+      "bytes": 534726,
+      "sha256": "d9dfb2325c175654e699d8f981fb5463eee2c9069c1d86c9eb09cba0f9837e67"
+    },
+    {
+      "path": "data/revision/runs/distilbert/original/seed_123/run_manifest.json",
+      "bytes": 1443,
+      "sha256": "9f3389060f87361e4f76bb7738197ed47b1207c4c1e428c7d56316136fe6d11b"
+    },
+    {
+      "path": "data/revision/runs/distilbert/original/seed_123/model/model.safetensors",
+      "bytes": 267851024,
+      "sha256": "6314ebec88bf3f84b2856d6e2c6ebf3da1079220bb3ae59b9e6bb9068e2ef2b5"
+    }
+  ]
+}
