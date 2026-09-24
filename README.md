@@ -1,6 +1,6 @@
 # Explainable Lightweight Transformers for Malicious IoT Traffic Detection
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21584811.svg)](https://doi.org/10.5281/zenodo.21584811)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21584810.svg)](https://doi.org/10.5281/zenodo.21584810)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Reproducibility package for the paper *"Explainable Lightweight Transformers for
@@ -10,7 +10,7 @@ fine-tuning, dual-method explainability (Captum Integrated Gradients + SHAP),
 explanation-robustness analysis, statistical tests, and figure generation — on
 the **CICIoT2023** dataset.
 
-> **Author:** Luiggi Valencia Vélez · **Status:** manuscript in preparation for submission · **Target:** *Internet of Things* (Elsevier), Subscription route · **Contact:** luiggiv2@hotmail.com · ORCID [0009-0003-7783-9023](https://orcid.org/0009-0003-7783-9023)
+> **Author:** Luiggi Valencia Vélez · **Status:** manuscript in preparation for submission · **Target:** *Internet of Things* (Elsevier), Subscription route · **ORCID:** [0009-0003-7783-9023](https://orcid.org/0009-0003-7783-9023)
 
 > **Version note:** this version supersedes v1.0.0. An audit of the first
 > experiment found cross-split serialization duplicates and a mismatch between a
@@ -170,8 +170,8 @@ this software archive, and the CICIoT2023 dataset:
   year      = {2026},
   publisher = {Zenodo},
   version   = {v1.1.0},
-  doi       = {10.5281/zenodo.21584811},
-  url       = {https://doi.org/10.5281/zenodo.21584811}
+  doi       = {10.5281/zenodo.21584810},
+  url       = {https://doi.org/10.5281/zenodo.21584810}
 }
 
 @inproceedings{neto2023ciciot,
