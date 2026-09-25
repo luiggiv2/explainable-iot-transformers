@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-24T04:53:38.936010+00:00",
+  "script": "scripts/39_robustness_xgboost.py",
+  "seed": 42,
+  "eps": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "xgb_base_correct": 431,
+  "class_level_pearson_r": 0.4539043875530956,
+  "class_level_permutation_p": 0.263219246031746,
+  "inputs": {
+    "model": {
+      "path": "data/revision/runs/baselines/original/models/xgb.joblib",
+      "sha256": "f206c06c4e22f45f53429df16acc83242b4bfc511aa0a977448a43db7d9428e7"
+    },
+    "test_split": {
+      "path": "data/revision/splits/test.parquet",
+      "sha256": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35"
+    },
+    "cohort": {
+      "path": "data/revision/xai/main/robustness/robustness_cohort.parquet",
+      "sha256": "8150802ebf55a054acc2e827da5b7e58930ebe87c3f2a12c6c4c25d13a4f67f3"
+    },
+    "encoder_records": {
+      "path": "data/revision/xai/main/robustness/robustness_records.parquet",
+      "sha256": "0096da90dcd4dc9c92420c22d26d59b80e140807ddde62f677a71223b9251905"
+    }
+  },
+  "outputs": {
+    "robustness_xgb_records.parquet": "3595a2e1c286673804add754e57c6ebb0b8484ff43459d9c1445d858e2c01608",
+    "robustness_xgb_metrics.csv": "bb16831165d42505f85f1dd198e917b2ebcb95841f94178302dec14116a4b1b3",
+    "robustness_xgb_summary.md": "8663c4f9c88a14e21ae6514ca4abc8e1ab562fa59bf82c12ec51e95e0d95e4f8"
+  }
+}

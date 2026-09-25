@@ -1,0 +1,7 @@
+method,group,n,rank_arp,abs_arp,rank_num,abs_num,top5
+Layer-IG (DistilBERT),Spoofing (all),120,37,0.0031179431118953456,1,0.12876208458073188,"num, max, ack_cnt, min, https"
+Layer-IG (DistilBERT),MITM-ARPSPOOFING,79,38,0.0031340008079938785,2,0.11919588708248566,"max, num, ack_cnt, https, ttl"
+Layer-IG (DistilBERT),DNS_SPOOFING,41,37,0.003087002673071343,1,0.14719451390662094,"num, max, min, ack_cnt, tot_size"
+TreeSHAP (XGBoost),Spoofing (all),120,10,0.014582012981797258,1,0.32724694286783534,"num, min, max, header_len, iat"
+TreeSHAP (XGBoost),MITM-ARPSPOOFING,79,10,0.0162949818068573,1,0.34281130153921585,"num, min, max, header_len, iat"
+TreeSHAP (XGBoost),DNS_SPOOFING,41,10,0.011281414513998642,2,0.2972570810376144,"min, num, max, https, iat"

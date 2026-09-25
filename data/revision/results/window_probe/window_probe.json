@@ -1,0 +1,41 @@
+{
+  "threshold": 50.0,
+  "seed": 42,
+  "feature_set": "no_number",
+  "n_features": 38,
+  "regime_classifier_depth3": {
+    "test_accuracy": 0.9951003266448903,
+    "test_balanced_accuracy": 0.9929660762044157,
+    "test_errors": 42,
+    "test_rows": 8572,
+    "confusion_true_rows_pred_cols": [
+      [
+        2040,
+        23
+      ],
+      [
+        19,
+        6490
+      ]
+    ],
+    "accuracy_vs_category_regime": 0.9946336910872609,
+    "number_regime_vs_category_regime_agreement": 0.9995333644423705,
+    "rules": "|--- iat <= 0.001\n|   |--- header_len <= 22.780\n|   |   |--- tot_sum <= 5987.500\n|   |   |   |--- class: False\n|   |   |--- tot_sum >  5987.500\n|   |   |   |--- class: True\n|   |--- header_len >  22.780\n|   |   |--- ack_cnt <= 11.500\n|   |   |   |--- class: False\n|   |   |--- ack_cnt >  11.500\n|   |   |   |--- class: True\n|--- iat >  0.001\n|   |--- tot_sum <= 32558.500\n|   |   |--- ack_cnt <= 10.500\n|   |   |   |--- class: False\n|   |   |--- ack_cnt >  10.500\n|   |   |   |--- class: True\n|   |--- tot_sum >  32558.500\n|   |   |--- avg <= 2348.730\n|   |   |   |--- class: True\n|   |   |--- avg >  2348.730\n|   |   |   |--- class: False\n"
+  },
+  "number_regressors": {
+    "depth_3": {
+      "test_r2": 0.9732577369399218,
+      "test_mae": 0.9309055654542305
+    },
+    "depth_6": {
+      "test_r2": 0.9892785442124252,
+      "test_mae": 0.3623079632703813
+    }
+  },
+  "closed_form_tot_sum_over_avg": {
+    "rows_with_avg_nonzero": 8572,
+    "rows_total": 8572,
+    "fraction_exact_within_1e-6": 1.0,
+    "r2": 1.0
+  }
+}

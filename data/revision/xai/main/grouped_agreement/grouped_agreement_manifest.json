@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-24T04:51:04.048549+00:00",
+  "script": "scripts/36_grouped_attribution_agreement.py",
+  "threshold": 0.9,
+  "top_k": 5,
+  "groupings": {
+    "G1": [
+      [
+        "proto_num"
+      ],
+      [
+        "ttl"
+      ],
+      [
+        "rate",
+        "iat"
+      ],
+      [
+        "header_len"
+      ],
+      [
+        "fin",
+        "fin_cnt"
+      ],
+      [
+        "syn",
+        "syn_cnt"
+      ],
+      [
+        "rst",
+        "rst_cnt"
+      ],
+      [
+        "psh"
+      ],
+      [
+        "ack",
+        "ack_cnt"
+      ],
+      [
+        "ece"
+      ],
+      [
+        "cwr"
+      ],
+      [
+        "http"
+      ],
+      [
+        "https"
+      ],
+      [
+        "dns"
+      ],
+      [
+        "telnet"
+      ],
+      [
+        "smtp"
+      ],
+      [
+        "ssh"
+      ],
+      [
+        "irc"
+      ],
+      [
+        "tcp"
+      ],
+      [
+        "udp"
+      ],
+      [
+        "dhcp"
+      ],
+      [
+        "arp",
+        "ipv",
+        "llc"
+      ],
+      [
+        "icmp"
+      ],
+      [
+        "igmp"
+      ],
+      [
+        "tot_sum"
+      ],
+      [
+        "min"
+      ],
+      [
+        "max",
+        "avg",
+        "tot_size"
+      ],
+      [
+        "std",
+        "var"
+      ],
+      [
+        "num"
+      ]
+    ],
+    "G2": [
+      [
+        "proto_num"
+      ],
+      [
+        "ttl"
+      ],
+      [
+        "rate",
+        "iat"
+      ],
+      [
+        "header_len"
+      ],
+      [
+        "fin",
+        "fin_cnt"
+      ],
+      [
+        "syn",
+        "syn_cnt"
+      ],
+      [
+        "rst",
+        "rst_cnt"
+      ],
+      [
+        "psh"
+      ],
+      [
+        "ack",
+        "ack_cnt"
+      ],
+      [
+        "ece"
+      ],
+      [
+        "cwr"
+      ],
+      [
+        "http"
+      ],
+      [
+        "https"
+      ],
+      [
+        "dns"
+      ],
+      [
+        "telnet"
+      ],
+      [
+        "smtp"
+      ],
+      [
+        "ssh"
+      ],
+      [
+        "irc"
+      ],
+      [
+        "tcp"
+      ],
+      [
+        "udp"
+      ],
+      [
+        "dhcp"
+      ],
+      [
+        "arp",
+        "ipv",
+        "llc"
+      ],
+      [
+        "icmp"
+      ],
+      [
+        "igmp"
+      ],
+      [
+        "tot_sum",
+        "max",
+        "avg",
+        "tot_size",
+        "num"
+      ],
+      [
+        "min"
+      ],
+      [
+        "std",
+        "var"
+      ]
+    ]
+  },
+  "protocol_type_linear_r2": 0.9717840231246356,
+  "inputs": {
+    "train": {
+      "path": "data/revision/splits/train.parquet",
+      "sha256": "7a0aec707073db5754d00ec7f0cfee0596685650aa0e90b1b11ac1624c647730"
+    },
+    "ig_table": {
+      "path": "data/revision/xai/main/distilbert/captum_feature_attribution.csv",
+      "sha256": "b02466abe8a7b45b4d467f8e1a65685a3d8c7e3f4c4cfd7e26609aaddc97d87c"
+    },
+    "shap_table": {
+      "path": "data/revision/xai/main/xgboost/shap_feature_attribution.csv",
+      "sha256": "68b53ff090eb39f898c9b5e85d31fa915f09e96c5a12bb7843db41a2cea6fafd"
+    },
+    "ig_per_sample": {
+      "path": "data/revision/xai/main/distilbert/captum_per_sample.parquet",
+      "sha256": "611c2f23e7915a6ccc9ce38aa730032e1257f427b4dc595682bb8c6b2c642745"
+    },
+    "shap_per_sample": {
+      "path": "data/revision/xai/main/xgboost/shap_per_sample.parquet",
+      "sha256": "21757e8293ae5df0ca8047b0f265d3a9b32d3c23f71c1ee546e8351ae6f050fa"
+    }
+  },
+  "outputs": {
+    "grouped_agreement.md": "773bc0aa9ebcb249e8b5c33f72f37f23c9e9d6f7d06e365231bd7fc04777d894",
+    "grouped_agreement_per_class.csv": "3e8d78f20c4e6d71967f0b33f8ffb786674b0112f8941dc6853ceb2b918afcc5",
+    "grouped_agreement_summary.csv": "2cb09ca6967109f2f5e1baa41879e86fb7baf48d963514155e2f624a74104bd2",
+    "grouped_ranks_per_class.csv": "128b0a680c920e06d056d0d85fb44d6013442a84634db84b389e4952e8fa68e3",
+    "train_high_correlation_pairs.csv": "46e725a47a29a8247b2aa7c0ad6835d7ee23b599ccb18780703a881a5831cac7",
+    "train_identities.csv": "97251f03b160b2a6f64ca7abcffc84b19c95048f2d4864fdf3f80425de269683",
+    "train_spearman_matrix.csv": "67579ed2ea0709f530e6aba4619eafc59c6292d667772c515f630e9efa3c6c9e"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-24T04:49:28.763391+00:00",
+  "script": "scripts/35_spoofing_subtypes.py",
+  "inputs": {
+    "train_split": {
+      "path": "data/revision/splits/train.parquet",
+      "sha256": "7a0aec707073db5754d00ec7f0cfee0596685650aa0e90b1b11ac1624c647730"
+    },
+    "test_split": {
+      "path": "data/revision/splits/test.parquet",
+      "sha256": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35"
+    },
+    "cohort": {
+      "path": "data/revision/xai/cohorts/original_xgb.parquet",
+      "sha256": "1d201ed8ee3cd6e6c046882b896e65ff134d2296e46c501bb3dfbc2afe7a610a"
+    },
+    "Layer-IG (DistilBERT)": {
+      "path": "data/revision/xai/main/distilbert/captum_per_sample.parquet",
+      "sha256": "611c2f23e7915a6ccc9ce38aa730032e1257f427b4dc595682bb8c6b2c642745"
+    },
+    "TreeSHAP (XGBoost)": {
+      "path": "data/revision/xai/main/xgboost/shap_per_sample.parquet",
+      "sha256": "21757e8293ae5df0ca8047b0f265d3a9b32d3c23f71c1ee546e8351ae6f050fa"
+    }
+  },
+  "outputs": {
+    "spoofing_arp_by_subtype.csv": "aca6dddca0d67c306ee760408dd49343ea7fbab19cb4d5c6e09c714b8065b5d2",
+    "spoofing_attribution_by_subtype.csv": "93fa154c69fb7f7b3f516ad61b3b4ac786680e43335077af5a95a1abc1ab68d1",
+    "spoofing_subtypes.md": "743f7b94d434ce7e19d15b7ff5c59d709ecdfa0d61c1ee7c0fe6f1479c54598b"
+  }
+}

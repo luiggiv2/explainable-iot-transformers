@@ -1,0 +1,7 @@
+identity,fraction_exact,max_relative_error
+Tot size == AVG,1.0,0.0
+Tot sum == Number * AVG,1.0,2.4098958711524337e-16
+Tot sum / AVG == Number (rows with AVG != 0),1.0,2.0301221021717148e-16
+Variance == Std^2,1.0,6.071532165918849e-15
+IPv == LLC,1.0,0.0
+IPv == 1 - ARP,1.0,2.220446049250313e-16

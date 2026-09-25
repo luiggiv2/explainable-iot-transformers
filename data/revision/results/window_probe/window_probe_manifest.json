@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-24T04:51:43.591492+00:00",
+  "script": "scripts/37_window_regime_probe.py",
+  "seed": 42,
+  "threshold": 50.0,
+  "inputs": {
+    "train": {
+      "path": "data/revision/splits/train.parquet",
+      "sha256": "7a0aec707073db5754d00ec7f0cfee0596685650aa0e90b1b11ac1624c647730"
+    },
+    "test": {
+      "path": "data/revision/splits/test.parquet",
+      "sha256": "1009b7950c8ec2ab5e471eff6925323c8338c1c13eaa8839794e29397ad7ec35"
+    }
+  },
+  "outputs": {
+    "number_distribution.csv": "c50859d61bb1023a8cf9ea373c4ec50504cc184eab69c38581cf277b9ff5c784",
+    "window_probe.json": "2c1d27ba45e23ae04aaa3f0b0d22878cda556fc713bc60a3875219a47df98a65",
+    "window_probe.md": "e014135c6c3dc57df8fde7890d89d1de1028ce122d9e00c331c0cee8e045b9fb"
+  }
+}

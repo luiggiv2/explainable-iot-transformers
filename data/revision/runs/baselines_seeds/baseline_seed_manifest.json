@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-24T04:52:42.120952+00:00",
+  "script": "scripts/38_baseline_seed_summary.py",
+  "producer": "scripts/03_baselines.py --models rf,xgb --feature-set original --seed S",
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "seed42_reproduces_reported": {
+    "rf": true,
+    "xgb": true
+  },
+  "xgb_early_stopping": {
+    "seed_42": {
+      "best_iteration": 127,
+      "best_score_mlogloss": 0.4215270964816144,
+      "boosting_rounds_fitted": 158
+    },
+    "seed_123": {
+      "best_iteration": 127,
+      "best_score_mlogloss": 0.4215270964816144,
+      "boosting_rounds_fitted": 158
+    },
+    "seed_2026": {
+      "best_iteration": 127,
+      "best_score_mlogloss": 0.4215270964816144,
+      "boosting_rounds_fitted": 158
+    },
+    "original_run": {
+      "best_iteration": 127,
+      "best_score_mlogloss": 0.4215270964816144,
+      "boosting_rounds_fitted": 158
+    }
+  },
+  "inputs": {
+    "seed_42_metrics": {
+      "path": "data/revision/runs/baselines_seeds/seed_42/baselines_metrics.csv",
+      "sha256": "9287be73d81fe0cc1e8836aad64dada3f04b190a456e847e6afe3182fc063d14"
+    },
+    "seed_123_metrics": {
+      "path": "data/revision/runs/baselines_seeds/seed_123/baselines_metrics.csv",
+      "sha256": "b559eb137ccf9ef803552b4a36d8d15e94295577089b5e0caa5b6769ddb98fbd"
+    },
+    "seed_2026_metrics": {
+      "path": "data/revision/runs/baselines_seeds/seed_2026/baselines_metrics.csv",
+      "sha256": "7af5d591da91a3c3c7001706fd13141ffaf6c62914fa50aa27353008541e648b"
+    },
+    "distilbert_seeds": {
+      "path": "data/revision/results/distilbert_original_seeds.csv",
+      "sha256": "66cb7576c469447b5330f51796c4888da3f845d0f5f26920227436a92d166a7f"
+    },
+    "original_metrics": {
+      "path": "data/revision/runs/baselines/original/baselines_metrics.csv",
+      "sha256": "ae88dda80b51c8d373b23090873ee68aca580ee05193220693125b9f3a1ff8c6"
+    }
+  },
+  "outputs": {
+    "baseline_seed_metrics.csv": "7e3a7259beee5e5e0a3a70a93c134f5101d9c355209b7ae7a47d428c2b2daf44",
+    "baseline_seed_summary.csv": "177f9968f1ccd0b1ea533a69a38d57cc646cb65f5468f7bc2105e9a159836e08",
+    "baseline_seed_summary.md": "8f9fe922f097a52bf92b5132441ce88694b7a68ffe36693e0b8de3559b0428ff"
+  }
+}

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "Explainable Lightweight Transformers for Malicious IoT Traffic Detection"
+title: "Beyond the Confusion Matrix: Auditing What Transformer and Tree Models Learn in IoT Intrusion Detection"
 abstract: >-
   Reproducibility package: a fine-tuned DistilBERT over a textual serialization
   of CICIoT2023 flow windows, benchmarked against classical baselines, with a
