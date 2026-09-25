@@ -177,7 +177,7 @@ this software archive, and the CICIoT2023 dataset:
                Tree Models Learn in IoT Intrusion Detection},
   year      = {2026},
   publisher = {Zenodo},
-  version   = {v1.1.0},
+  version   = {v1.2.0},
   doi       = {10.5281/zenodo.21584810},
   url       = {https://doi.org/10.5281/zenodo.21584810}
 }
